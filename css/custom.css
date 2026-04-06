@@ -143,15 +143,7 @@ body, .heading, .paragraph, .nav-link, .button, input, select, textarea {
   grid-column: span 2 / span 2;
 }
 
-/* kontakt.html Sociální sítě: use dark-blue circles with white icons (matches footer style) */
-.contact-content-block .contact-social-link {
-  background-color: var(--color-3);
-  border-color: var(--color-3);
-}
-.contact-content-block .contact-social-link:hover {
-  background-color: #003080;
-  border-color: #003080;
-}
+/* Social icons: use default webflow.css styling (transparent pink bg, yellow border) */
 
 /* info-badge-2 ("16 žáků ve třídě"): dark blue bg needs white text */
 .info-badge-2 .info-badge-number,
@@ -452,4 +444,43 @@ body, .heading, .paragraph, .nav-link, .button, input, select, textarea {
   background-size: auto 0.4em;
   padding-bottom: 0.3em;
   display: inline;
+}
+
+
+/* Dropdown item hover/current animations */
+.link-text-with-dot .link-text-yellow-dot {
+  transition: transform 0.3s ease;
+  background-color: var(--yellow-4, #f5c748) !important;
+}
+.link-text-with-dot .link-text {
+  transition: transform 0.3s ease;
+}
+
+/* Force-hide dots and reset text on non-hovered, non-current items
+   (prevents dots "sticking" when dropdown closes mid-transition) */
+.link-text-with-dot:not(:hover):not(.w--current) .link-text-yellow-dot {
+  transform: translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(45deg) skew(0deg, 0deg) !important;
+}
+.link-text-with-dot:not(:hover):not(.w--current) .link-text {
+  transform: translate3d(-1em, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg) !important;
+}
+
+/* Show dot and align text on hover or current page */
+.link-text-with-dot:hover .link-text-yellow-dot,
+.link-text-with-dot.w--current .link-text-yellow-dot {
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(45deg) skew(0deg, 0deg) !important;
+}
+.link-text-with-dot:hover .link-text,
+.link-text-with-dot.w--current .link-text {
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg) !important;
+}
+
+/* Larger text in about-grid content blocks */
+.about-grid-content ul,
+.about-grid-content ol {
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+.about-grid-content li {
+  margin-bottom: 0.5em;
 }

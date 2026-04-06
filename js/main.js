@@ -372,7 +372,7 @@
       var href = a.getAttribute('href');
       if (!href) return;
       // Normalize
-      var hrefPath = href.replace(/\.html$/, '').replace(/\/index$/, '/') || '/';
+      var hrefPath = href.split('#')[0].replace(/\.html$/, '').replace(/\/index$/, '/') || '/';
       var currentPath = path.replace(/\.html$/, '').replace(/\/index$/, '/') || '/';
       if (hrefPath === currentPath || (hrefPath !== '/' && currentPath.endsWith(hrefPath))) {
         a.classList.add('w--current');
