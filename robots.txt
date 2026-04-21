@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Non-public / legacy pages
+Disallow: /preview-booking
+Disallow: /nas-model-vyuky-a-uceni-old
+Disallow: /skolaflow_homepage
+Disallow: /_backups/
+
+Sitemap: https://www.skolaflow.cz/sitemap.xml

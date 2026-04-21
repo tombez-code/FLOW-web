@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Stránka nenalezena (404) | Základní škola FLOW</title>
+<meta name="description" content="Omlouváme se, požadovanou stránku se nepodařilo najít. Vraťte se prosím na hlavní stránku nebo použijte menu.">
+<meta name="robots" content="noindex, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+<link href="/images/67f6bc81331b2efe13fa1506_flow-fav.png" rel="apple-touch-icon">
+<link href="/css/webflow.css" rel="stylesheet" type="text/css">
+<link href="/css/custom.css" rel="stylesheet" type="text/css">
+<style>
+  .flow-404 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6vh 1.25rem;
+    background: linear-gradient(135deg, #fefaf3 0%, #ffffff 70%);
+    box-sizing: border-box;
+  }
+  .flow-404__code {
+    font-size: clamp(6rem, 20vw, 12rem);
+    font-weight: 700;
+    color: #004aad;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -0.04em;
+  }
+  .flow-404__title {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 1rem 0 0.75rem;
+  }
+  .flow-404__text {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: #555;
+    max-width: 32rem;
+    margin: 0 auto 2rem;
+  }
+  .flow-404__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+  .flow-404__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85em 1.75em;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    min-height: 48px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+  .flow-404__btn--primary {
+    background: #004aad;
+    color: #fff;
+    box-shadow: 0 11px 20px -7px rgba(30, 2, 63, 0.2);
+  }
+  .flow-404__btn--primary:hover {
+    background: #0057cc;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 26px -7px rgba(30, 2, 63, 0.28);
+  }
+  .flow-404__btn--secondary {
+    background: #f5c748;
+    color: #2b0804;
+    border: 1px solid rgb(247, 198, 62);
+    box-shadow: 0 11px 20px -7px rgba(30, 2, 63, 0.2);
+  }
+  .flow-404__btn--secondary:hover {
+    background: #f7ce55;
+    transform: translateY(-2px);
+  }
+  .flow-404__lang {
+    margin-top: 2.5rem;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  .flow-404__lang a {
+    color: #004aad;
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+<main class="flow-404" role="main">
+  <p class="flow-404__code" aria-hidden="true">404</p>
+  <h1 class="flow-404__title">Tuhle stránku jsme nenašli</h1>
+  <p class="flow-404__text">
+    Odkaz může být neplatný nebo se stránka přesunula jinam.
+    Můžete se vrátit na hlavní stránku nebo nás přímo kontaktovat &mdash; rádi pomůžeme.
+  </p>
+  <div class="flow-404__actions">
+    <a class="flow-404__btn flow-404__btn--primary" href="/">Zpět na hlavní stránku</a>
+    <a class="flow-404__btn flow-404__btn--secondary" href="/kontakt">Kontaktovat školu</a>
+  </div>
+  <p class="flow-404__lang">
+    <a href="/en/404.html" hreflang="en" lang="en">English version</a>
+  </p>
+</main>
+</body>
+</html>

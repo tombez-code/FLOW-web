@@ -199,6 +199,37 @@
     });
   }
 
+  // ── Mobile Lang Switcher ─────────────────────────────────────────────────
+  // The desktop lang switcher (CS/EN) lives in .nav-sub-links, which is hidden
+  // on mobile via CSS. Clone the CS/EN links into the aside (burger) menu so
+  // mobile users can switch language.
+  function initMobileLangSwitcher() {
+    var asideMenu = $('.aside-menu');
+    var menuMainLinks = $('.menu-main-links');
+    if (!asideMenu || !menuMainLinks) return;
+
+    // Skip if the aside menu already contains lang links (e.g., added server-side)
+    if (asideMenu.querySelector('.nav-link.is-lang, .menu-lang-links')) return;
+
+    var langLinks = $$('.nav-link.is-lang');
+    if (langLinks.length === 0) return;
+
+    var wrapper = document.createElement('div');
+    wrapper.className = 'menu-lang-links';
+    wrapper.setAttribute('aria-label', 'Language');
+
+    langLinks.forEach(function(orig) {
+      var a = document.createElement('a');
+      a.href = orig.getAttribute('href');
+      a.textContent = orig.textContent;
+      a.className = 'menu-lang-link' + (orig.classList.contains('w--current') ? ' is-current' : '');
+      if (orig.hasAttribute('aria-current')) a.setAttribute('aria-current', 'page');
+      wrapper.appendChild(a);
+    });
+
+    menuMainLinks.appendChild(wrapper);
+  }
+
   // ── Scroll Animations (fade-in on scroll) ────────────────────────────────
   function initScrollAnimations() {
     // Selectors to EXCLUDE from scroll animation (nav/menu controlled by JS)
@@ -748,6 +779,7 @@
     initImageFallbacks();
     initDropdowns();
     initBurgerMenu();
+    initMobileLangSwitcher();
     initScrollAnimations();
     initCarousels();
     markActiveNavLink();
