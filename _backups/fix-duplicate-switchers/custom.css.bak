@@ -532,14 +532,42 @@ body, .heading, .paragraph, .nav-link, .button, input, select, textarea {
 }
 
 /* ── Mobile language switcher (CS/EN) ─────────────────────────────────────
-   REMOVED 2026-04-22. The rebuilt aside-menu now emits a native
-   .aside-menu-locales / .aside-menu-lang block (styled below in the
-   ≤991px media query). The old .menu-lang-links / .menu-lang-link
-   classes were injected at runtime by initMobileLangSwitcher() in main.js;
-   that function has been removed because it produced a DUPLICATE CS/EN
-   switcher on mobile (one above the native one). Old rules preserved in
-   _backups/fix-duplicate-switchers/custom.css.bak.
+   Injected by main.js initMobileLangSwitcher() into .menu-main-links.
+   Visible only inside the aside (burger) menu. On desktop the burger is
+   hidden so these styles have no effect on the desktop layout.
    ─────────────────────────────────────────────────────────────────────── */
+.menu-lang-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  align-items: center;
+}
+.menu-lang-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+.menu-lang-link:hover,
+.menu-lang-link:focus {
+  opacity: 1;
+}
+.menu-lang-link.is-current {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
 
 /* ── Mobile tap target sizing for nav links ─────────────────────────────── */
 @media (max-width: 991px) {
@@ -1279,6 +1307,12 @@ html body .custom-list-item .flex-vertical-start > p.paragraph.is-large {
   html body .aside-menu .link-text-with-dot .link-text {
     font-size: 1em !important;
     line-height: 1.15 !important;
+  }
+  /* Mobile lang switcher — ensure visible and not clipped */
+  html body .aside-menu .menu-lang-links {
+    margin-top: 0.75rem !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
   }
   /* Ensure close button stays reachable while scrolling */
   html body .aside-menu .menu-close {
