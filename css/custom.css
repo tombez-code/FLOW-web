@@ -993,6 +993,14 @@ html body .course-detail-block .w-inline-block.button.is-yellow {
   color: #ffffff !important;
   border: 2px solid #004aad !important;
   box-shadow: 0 3px 10px rgba(0, 74, 173, 0.25) !important;
+  /* Visually shrink the button without shrinking its layout slot —
+     transform:scale only changes paint size, so the card keeps the exact
+     same dimensions as before. */
+  transform: scale(0.72) !important;
+  transform-origin: center !important;
+}
+html body .course-detail-block .button.is-yellow:hover {
+  transform: scale(0.72) translateY(-1px) !important;
 }
 html body .course-detail-block .button.is-yellow .main-button-name {
   color: #ffffff !important;
@@ -1007,6 +1015,20 @@ html body .course-detail-block .button.is-yellow:hover {
 html body .course-detail-block .button.is-yellow .icon.in-main-button,
 html body .course-detail-block .button.is-yellow img.in-main-button {
   filter: brightness(0) invert(1) !important;
+}
+/* Hide the decorative yellow shadow/line halos behind the button — on the
+   blue-override button they stack as muddy yellow-on-blue capsules that look
+   like a gray smudge. Without them the button reads cleanly as a solid blue CTA. */
+html body .course-detail-block .button.is-yellow .main-button-shadow,
+html body .course-detail-block .button.is-yellow .main-button-shadow.is-2nd,
+html body .course-detail-block .button.is-yellow .main-button-line,
+html body .course-detail-block .button.is-yellow .main-button-line.is-2nd {
+  display: none !important;
+}
+/* Soften the divider line between button text and icon inside course cards */
+html body .course-detail-block .button.is-yellow .main-button-icon,
+html body .course-detail-block .button.is-yellow .main-button-icon.is-2nd {
+  border-left-color: rgba(255, 255, 255, 0.35) !important;
 }
 
 /* ── Criteria lists ("Sourozenci...", "Zkušební den") — force

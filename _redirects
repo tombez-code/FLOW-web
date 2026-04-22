@@ -1,0 +1,60 @@
+# ============================================================
+# Cloudflare Pages _redirects — skolaflow.cz
+# ============================================================
+# Cloudflare Pages already SERVES /foo by reading foo.html from
+# disk (clean URLs). What it does NOT do automatically is 301
+# from /foo.html to /foo — so both URLs return 200 with the same
+# HTML, which is why Google flags "Duplicate without user-selected
+# canonical" on ~121 pages.
+#
+# The rule below makes the .html version a 301 redirect to the
+# pretty URL, matching what canonical tags and sitemap.xml declare.
+# ------------------------------------------------------------
+
+# 1) Strip trailing .html on every request → canonical pretty URL
+/*.html  /:splat  301
+
+# ------------------------------------------------------------
+# 2) Legacy EN slugs from the Webflow era
+#    (these URLs may be indexed or linked externally; redirect
+#    to the current EN page rather than the homepage so SEO
+#    signal is preserved)
+# ------------------------------------------------------------
+/en/admissions     /en/pro-zajemce                        301
+/en/contact        /en/kontakt                            301
+/en/our-team       /en/nas-tym                            301
+/en/for-parents    /en/pro-zajemce                        301
+/en/careers        /en/kariera                            301
+/en/fees-2025-26   /en/pro-zajemce/poplatky-2025-26       301
+/en/new-campus     /en/novy-kampus                        301
+
+# ------------------------------------------------------------
+# 3) Stray / preview / legacy pages
+# ------------------------------------------------------------
+/en.html                             /en/                       301
+/preview-booking                     /                          301
+/skolaflow_homepage                  /                          301
+/nas-model-vyuky-a-uceni-old         /vzdelavaci-program        301
+/en/nas-model-vyuky-a-uceni-old      /en/vzdelavaci-program     301
+
+# ------------------------------------------------------------
+# 4) Legacy Webflow CMS collection URLs
+#    /teacher/[slug] was the old per-teacher profile route
+#    (e.g. /teacher/daniel-prazak). Not part of current IA —
+#    redirect all to the team page.
+# ------------------------------------------------------------
+/teacher/*        /nas-tym          301
+/en/teacher/*     /en/nas-tym       301
+
+# ------------------------------------------------------------
+# 4b) /pro-rodice removed 2026-04-22 (page was behind Cloudflare
+#     Access / returning 401, and no longer needed). Files archived
+#     in _backups/removed-2026-04-22/.
+# ------------------------------------------------------------
+/pro-rodice        /        301
+/en/pro-rodice     /en/     301
+
+# ------------------------------------------------------------
+# 5) Block direct access to backup snapshots
+# ------------------------------------------------------------
+/_backups/*   /   301

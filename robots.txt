@@ -4,7 +4,10 @@ Allow: /
 # Non-public / legacy pages
 Disallow: /preview-booking
 Disallow: /nas-model-vyuky-a-uceni-old
+Disallow: /en/nas-model-vyuky-a-uceni-old
 Disallow: /skolaflow_homepage
+Disallow: /pro-rodice
+Disallow: /en/pro-rodice
 Disallow: /_backups/
 
 Sitemap: https://www.skolaflow.cz/sitemap.xml

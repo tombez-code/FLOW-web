@@ -101,14 +101,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.skolaflow.cz/en/kariera" />
   </url>
   <url>
-    <loc>https://www.skolaflow.cz/pro-rodice</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://www.skolaflow.cz/pro-rodice" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.skolaflow.cz/en/pro-rodice" />
-  </url>
-  <url>
     <loc>https://www.skolaflow.cz/kontakt</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -347,12 +339,6 @@
     <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.skolaflow.cz/en/pro-rodice</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.skolaflow.cz/en/kontakt</loc>
