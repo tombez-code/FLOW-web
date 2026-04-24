@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "skolaflow.cz",
+  "Id": "b28487a8-4729-4419-bf43-8e1a00fe8867"
+}
